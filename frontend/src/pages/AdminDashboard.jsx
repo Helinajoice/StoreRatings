@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/AdminDashboard.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { API_BASE } from "../config";
 import { useNavigate } from "react-router-dom";
 
 const AdminDashboard = () => {
@@ -25,7 +26,7 @@ const AdminDashboard = () => {
 
     const fetchStats = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/admin/stats", {
+        const res = await fetch(`${API_BASE}/api/admin/stats`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

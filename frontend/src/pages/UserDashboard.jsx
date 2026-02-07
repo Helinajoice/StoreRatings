@@ -3,6 +3,7 @@ import "../styles/UserDashboard.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { API_BASE } from "../config";
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const UserDashboard = () => {
 
     const fetchProfile = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/user/me", {
+        const res = await fetch(`${API_BASE}/api/user/me`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

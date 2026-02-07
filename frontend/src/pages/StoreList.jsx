@@ -3,6 +3,7 @@ import "../styles/StoreList.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { API_BASE } from "../config";
 
 const StoreList = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const StoreList = () => {
   useEffect(() => {
     const fetchStores = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/stores");
+        const res = await fetch(`${API_BASE}/api/stores`);
         const data = await res.json();
         if (!res.ok) {
           console.error(data.message || "Failed to load stores");
@@ -47,7 +48,7 @@ const StoreList = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/ratings", {
+      const res = await fetch(`${API_BASE}/api/ratings`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

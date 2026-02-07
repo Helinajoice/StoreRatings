@@ -3,6 +3,7 @@ import "../styles/MyRatings.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { API_BASE } from "../config";
 
 const MyRatings = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const MyRatings = () => {
 
     const fetchRatings = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/user/ratings", {
+        const res = await fetch(`${API_BASE}/api/user/ratings`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

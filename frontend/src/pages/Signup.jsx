@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/Signup.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { API_BASE } from "../config";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +56,7 @@ const Signup = () => {
     if (!validate()) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+      const res = await fetch(`${API_BASE}/api/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
@@ -80,7 +81,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/verify-email", {
+      const res = await fetch(`${API_BASE}/api/auth/verify-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, code: verificationCode })
