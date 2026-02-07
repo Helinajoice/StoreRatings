@@ -4,11 +4,9 @@ A full-stack web application where users can browse stores, rate them, and where
 
 ---
 
-## Live Demo
+## Video
 
-**View the project:** [Add your deployed URL here]
-
-*(Replace the link above with your live URL once the app is deployed, e.g. on Vercel, Netlify, or AWS.)*
+**Demo / walkthrough:** [https://drive.google.com/file/d/1Y6Teq_SSWh_G_LZbkOw1uHT0VzK_Em6f/view?usp=sharing]
 
 ---
 
@@ -18,7 +16,7 @@ A full-stack web application where users can browse stores, rate them, and where
 - **Store owners** sign up and must be **approved by an admin** before they can log in. Once approved, they get a dashboard showing their store(s) and average ratings.
 - **Admins** can add/remove users and store owners, approve pending store owners, add/remove stores, and view all store ratings in one place.
 
-The app uses JWT for authentication, supports both **PostgreSQL** (local) and **SQLite** (e.g. for deployment without a separate database server), and includes email verification for signup.
+The app uses JWT for authentication, PostgreSQL for the database, and includes email verification for signup.
 
 ---
 
@@ -28,19 +26,19 @@ The app uses JWT for authentication, supports both **PostgreSQL** (local) and **
 |-----------|------------|
 | **Frontend** | React 19, React Router 7, CSS |
 | **Backend**  | Node.js, Express 5 |
-| **Database** | Sequelize ORM with PostgreSQL or SQLite |
+| **Database** | Sequelize ORM with PostgreSQL |
 | **Auth**     | JWT (jsonwebtoken), bcryptjs for passwords |
 | **Email**    | Nodemailer (verification codes) |
 | **API**      | REST (JSON) |
 
 ---
 
-## How to Run the Project
+## How to Run Locally
 
 ### Prerequisites
 
 - **Node.js** (v16 or newer) and **npm**
-- For **PostgreSQL**: a running Postgres server and a database (optional; you can use SQLite instead)
+- **PostgreSQL** installed and running, with a database created (e.g. `store_ratings`)
 
 ### 1. Clone the repository
 
@@ -56,26 +54,19 @@ cd backend
 npm install
 ```
 
-Create a `.env` file in the `backend` folder (see `backend/.env.example`). Minimum for **SQLite** (no PostgreSQL):
+Create a `.env` file in the `backend` folder (use `backend/.env.example` as reference). For **PostgreSQL**:
 
 ```env
 NODE_ENV=development
 PORT=5000
-DB_DIALECT=sqlite
-SQLITE_STORAGE=./database.sqlite
-JWT_SECRET=your-long-random-secret-at-least-32-chars
-```
 
-For **PostgreSQL**, use:
-
-```env
-NODE_ENV=development
-PORT=5000
-DB_NAME=your_db_name
-DB_USER=your_db_user
+DB_DIALECT=postgres
+DB_NAME=store_ratings
+DB_USER=postgres
 DB_PASSWORD=your_db_password
 DB_HOST=localhost
-JWT_SECRET=your-long-random-secret
+
+JWT_SECRET=your-long-random-secret-at-least-32-chars
 ```
 
 Start the backend:
@@ -84,7 +75,7 @@ Start the backend:
 npm start
 ```
 
-The server runs at `http://localhost:5000`. On first run with SQLite, `database.sqlite` and tables are created automatically.
+The server runs at `http://localhost:5000`.
 
 **Optional – seed stores and store owners:**
 
@@ -104,11 +95,11 @@ npm install
 npm start
 ```
 
-The app opens at `http://localhost:3000`. The frontend talks to the backend at `http://localhost:5000` by default.
+The app opens at `http://localhost:3000` and talks to the backend at `http://localhost:5000`.
 
 ### 4. First-time admin user
 
-Admins are not created via signup. Create one in your database (e.g. in PostgreSQL or by inserting into SQLite). Example for PostgreSQL:
+Admins are not created via signup. Create one in your database. Example for PostgreSQL:
 
 ```sql
 -- Use a bcrypt hash for your chosen password (e.g. generate with Node: require('bcryptjs').hashSync('YourPassword', 10))
@@ -116,7 +107,7 @@ INSERT INTO "Users" ("name", "email", "address", "password", "role", "is_verifie
 VALUES ('Admin', 'admin@example.com', '', '<your-bcrypt-hash>', 'ADMIN', true, true, NOW(), NOW());
 ```
 
-Then log in on the app with that email, password, and role **Admin**.
+Then log in with that email and password (role **Admin**).
 
 ---
 
@@ -125,7 +116,7 @@ Then log in on the app with that email, password, and role **Admin**.
 ```
 StoreRatings/
 ├── backend/          # Node + Express API
-│   ├── config/       # Database config (PostgreSQL / SQLite)
+│   ├── config/       # Database config (PostgreSQL)
 │   ├── controllers/  # Auth, admin, user, store, rating logic
 │   ├── middleware/   # JWT auth, role-based authorize
 │   ├── models/       # User, Store, Rating (Sequelize)
@@ -138,22 +129,20 @@ StoreRatings/
 │       ├── components/  # Navbar, Footer
 │       ├── pages/       # Login, Signup, Dashboards, Store list, etc.
 │       └── styles/      # CSS per page
-├── DEPLOYMENT.md     # GitHub + AWS / SQLite deployment notes
-└── README.md         # This file
+└── README.md
 ```
 
 ---
 
 ## Environment Variables (Backend)
 
-| Variable        | Description |
-|----------------|-------------|
-| `PORT`         | Server port (default 5000) |
-| `DB_DIALECT`   | `sqlite` or `postgres` |
-| `SQLITE_STORAGE` | Path to SQLite file (when using SQLite) |
-| `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST` | Used when `DB_DIALECT=postgres` |
-| `JWT_SECRET`   | Secret for signing JWT tokens (required) |
-| `EMAIL_USER`, `EMAIL_PASS` | Optional; for sending verification emails |
+| Variable   | Description |
+|------------|-------------|
+| `PORT`     | Server port (default 5000) |
+| `DB_DIALECT` | `postgres` for local |
+| `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST` | PostgreSQL connection |
+| `JWT_SECRET` | Secret for signing JWT tokens (required) |
+| `SMTP_*`   | Optional; for verification emails (see `.env.example`) |
 
 See `backend/.env.example` for a template.
 

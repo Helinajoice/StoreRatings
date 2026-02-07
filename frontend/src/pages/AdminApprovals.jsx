@@ -3,7 +3,6 @@ import "../styles/ManageUsers.css"; // reuse styling
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-import { API_BASE } from "../config";
 
 const AdminApprovals = () => {
   const navigate = useNavigate();
@@ -24,7 +23,7 @@ const AdminApprovals = () => {
 
       try {
         const res = await fetch(
-          `${API_BASE}/api/admin/store-owners/pending`,
+          "http://localhost:5000/api/admin/store-owners/pending",
           {
             headers: {
               "Content-Type": "application/json",
@@ -51,7 +50,7 @@ const AdminApprovals = () => {
   const handleApprove = async (id) => {
     try {
       const res = await fetch(
-        `${API_BASE}/api/admin/store-owners/${id}/approve`,
+        `http://localhost:5000/api/admin/store-owners/${id}/approve`,
         {
           method: "PUT",
           headers: {
@@ -75,7 +74,7 @@ const AdminApprovals = () => {
   const handleReject = async (id) => {
     try {
       const res = await fetch(
-        `${API_BASE}/api/admin/store-owners/${id}`,
+        `http://localhost:5000/api/admin/store-owners/${id}`,
         {
           method: "DELETE",
           headers: {

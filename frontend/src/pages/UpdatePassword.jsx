@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/UpdatePassword.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { API_BASE } from "../config";
 
 const UpdatePassword = () => {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -40,7 +39,7 @@ const UpdatePassword = () => {
     }
 
     try {
-      const res = await fetch(`${API_BASE}/api/user/password`, {
+      const res = await fetch("http://localhost:5000/api/user/password", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

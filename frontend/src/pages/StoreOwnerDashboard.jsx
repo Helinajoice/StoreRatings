@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../styles/StoreOwnerDashboard.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { API_BASE } from "../config";
 
 const StoreOwnerDashboard = () => {
   const [stores, setStores] = useState([]);
@@ -19,7 +18,7 @@ const StoreOwnerDashboard = () => {
 
     const fetchStores = async () => {
       try {
-        const res = await fetch(`${API_BASE}/api/owner/stores`, {
+        const res = await fetch("http://localhost:5000/api/owner/stores", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

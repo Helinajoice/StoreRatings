@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../styles/ManageStores.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { API_BASE } from "../config";
 import { useNavigate } from "react-router-dom";
 
 const ManageStores = () => {
@@ -33,7 +32,7 @@ const ManageStores = () => {
       if (!token) return;
 
       try {
-        const res = await fetch(`${API_BASE}/api/admin/stores`, {
+        const res = await fetch("http://localhost:5000/api/admin/stores", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -82,7 +81,7 @@ const ManageStores = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${API_BASE}/api/admin/stores`, {
+      const res = await fetch("http://localhost:5000/api/admin/stores", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -112,7 +111,7 @@ const ManageStores = () => {
   const handleDeleteStore = async (id) => {
     try {
       const res = await fetch(
-        `${API_BASE}/api/admin/stores/${id}`,
+        `http://localhost:5000/api/admin/stores/${id}`,
         {
           method: "DELETE",
           headers: {

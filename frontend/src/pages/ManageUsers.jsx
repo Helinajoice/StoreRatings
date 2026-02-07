@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../styles/ManageUsers.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { API_BASE } from "../config";
 import { useNavigate } from "react-router-dom";
 
 const ManageUsers = () => {
@@ -38,7 +37,7 @@ const ManageUsers = () => {
 
       try {
         const res = await fetch(
-          `${API_BASE}/api/admin/users?role=${activeTab}`,
+          `http://localhost:5000/api/admin/users?role=${activeTab}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -70,7 +69,7 @@ const ManageUsers = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${API_BASE}/api/admin/users`, {
+      const res = await fetch("http://localhost:5000/api/admin/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +97,7 @@ const ManageUsers = () => {
   const handleRemoveUser = async (id) => {
     try {
       const res = await fetch(
-        `${API_BASE}/api/admin/users/${id}`,
+        `http://localhost:5000/api/admin/users/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -285,7 +284,7 @@ const ManageUsers = () => {
                           onClick={async () => {
                             try {
                               const res = await fetch(
-                                `${API_BASE}/api/admin/store-owners/${user.id}/approve`,
+                                `http://localhost:5000/api/admin/store-owners/${user.id}/approve`,
                                 {
                                   method: "PUT",
                                   headers: {
