@@ -1,0 +1,110 @@
+/* GLOBAL RESET */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+/* HOME CONTAINER */
+.home-container {
+  padding: 0;
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(
+      rgba(28, 31, 39, 0.6),
+      rgba(28, 31, 39, 0.6)
+    ),
+   url("https://img.freepik.com/premium-photo/product-service-review-ideas-from-customers-portraits-pointing-star-rating-button-with-store-used-store-rating-reviews-get-store-s-opinions-show-satisfaction_528263-3855.jpg"); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-attachment: fixed;
+  padding: 10px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  color: #e5e7eb;
+}
+
+/* CTA BUTTONS */
+.cta-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 28px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  background-color: #facc15; /* mustard yellow */
+  color: #0f172a;
+}
+
+.primary:hover {
+  background-color: #eab308;
+}
+
+.secondary {
+  border: 2px solid #facc15;
+  color: #facc15;
+  background: transparent;
+}
+
+.secondary:hover {
+  background-color: #facc15;
+  color: #0f172a;
+}
+
+/* ABOUT & HOW IT WORKS */
+
+
+.about h2,
+.how-it-works h2 {
+  color: #facc15;
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: #e5e7eb;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.how-it-works ol {
+  list-style-position: inside;
+  padding: 0;
+  color: #e5e7eb;
+}
+
+.how-it-works li {
+  margin: 10px 0;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #020617;
+  text-align: center;
+  padding: 20px;
+  color: #94a3b8;
+}

@@ -1,0 +1,37 @@
+.user-details-container {
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #0f172a; /* Dark Blue background */
+  color: #ffffff; /* White text */
+}
+
+.user-details-container h1 {
+  margin-bottom: 20px;
+  color: #facc15; /* Mustard Yellow heading */
+}
+
+.details-card {
+  background: #0f172a; /* Dark Blue card background */
+  padding: 30px;
+  border-radius: 6px;
+  max-width: 600px;
+  border: 1px solid #facc15; /* Mustard Yellow border */
+  box-shadow: 0 2px 6px rgba(250, 204, 21, 0.4); /* Soft yellow shadow */
+  color: #ffffff; /* White text */
+}
+
+.detail-row {
+  margin-bottom: 15px;
+}
+
+.detail-row span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #facc15; /* Mustard Yellow labels */
+}
+
+.detail-row p {
+  margin: 0;
+  color: #ffffff; /* White text for values */
+}

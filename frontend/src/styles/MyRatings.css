@@ -1,0 +1,69 @@
+.ratings-page {
+  min-height: 80vh;
+  padding: 40px;
+  background-color: #0f172a; /* Dark Blue background */
+  color: #ffffff; /* White text */
+  text-align: center;
+}
+
+.ratings-page h2 {
+  color: #facc15; /* Mustard Yellow heading */
+  margin-bottom: 30px;
+}
+
+.no-ratings {
+  color: #facc15;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.rating-card {
+  background: #0f172a; /* Dark Blue card */
+  border: 1px solid #facc15; /* Mustard Yellow border */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  box-shadow: 0 2px 6px rgba(250, 204, 21, 0.4); /* Soft yellow shadow */
+  text-align: left;
+}
+
+.rating-card h3 {
+  color: #facc15; /* Mustard Yellow store name */
+  margin-bottom: 10px;
+}
+
+.rating-stars {
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 20px;
+  color: #ffffff; /* Empty stars white */
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: #facc15; /* Filled stars mustard yellow */
+}
+
+.comment {
+  color: #ffffff; /* White text */
+  font-style: italic;
+}
+
+.back-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #facc15; /* Mustard Yellow */
+  color: #0f172a; /* Dark Blue text */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #e6b800; /* Darker mustard on hover */
+}

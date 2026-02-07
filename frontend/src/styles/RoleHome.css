@@ -1,0 +1,89 @@
+.role-home {
+  min-height: 100vh;
+  padding: 60px 40px;
+  text-align: center;
+
+  /* Background image + dark overlay */
+min-height: 90vh;
+background:
+  linear-gradient(
+    rgba(45, 44, 44, 0.5),
+    rgba(45, 44, 44, 0.5)
+  ),
+  url("https://business.trustedshops.com/hubfs/1-TS_B2B/content/uk/20250225-shop-reviews/feat-shop-reviews-w740h370.webp");
+
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+padding: 50px;
+color: #ffffff;
+
+}
+
+.role-text {
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+  width: 1000px;
+  padding: 28px;
+
+  background-color: #ffffff;
+  color: #0f172a;
+
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.35);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background-color: #facc15;
+  color: #0f172a;
+}
+
+/* Logout button */
+.logout-btn {
+  margin-top: 50px;
+  padding: 12px 32px;
+
+  background-color: #facc15;
+  color: #0f172a;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+  transform: translateY(-2px);
+}

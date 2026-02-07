@@ -1,0 +1,102 @@
+.manage-stores {
+  padding: 40px;
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.manage-stores h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #facc15;
+}
+
+/* ===== Add Store Form ===== */
+.add-store-form {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  padding: 25px;
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+}
+
+.add-store-form h3 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #facc15;
+}
+
+.add-store-form input,
+.add-store-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.add-store-form input::placeholder,
+.add-store-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+.add-store-form button {
+  width: 100%;
+  padding: 12px;
+  background: #facc15;
+  color: #0f172a;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-store-form button:hover {
+  background: #eab308;
+}
+
+/* ===== Controls ===== */
+.store-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.store-controls input,
+.store-controls select {
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #020617;
+  color: #ffffff;
+}
+
+/* ===== Table ===== */
+.store-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #020617;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.store-table th,
+.store-table td {
+  border: 1px solid #1e293b;
+  padding: 12px;
+  text-align: center;
+}
+
+.store-table th {
+  background: #020617;
+  color: #facc15;
+}
+
+.store-table td {
+  color: #e5e7eb;
+}

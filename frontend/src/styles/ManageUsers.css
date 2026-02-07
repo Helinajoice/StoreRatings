@@ -1,0 +1,159 @@
+/* ===== Page Wrapper ===== */
+.manage-users-container {
+  padding: 70px;
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* ===== Heading ===== */
+.manage-users-container h1 {
+  margin-bottom: 35px;
+  color: #facc15;
+  font-size: 34px;
+  text-align: center;
+}
+
+/* ===== Tabs ===== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.tabs button {
+  padding: 14px 30px;
+  border: 2px solid #1e293b;
+  cursor: pointer;
+  background-color: #020617;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.tabs button.active {
+  background-color: #facc15;
+  color: #0f172a;
+}
+
+.tabs button:hover {
+  border-color: #facc15;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #1e293b;
+  padding: 36px;
+  border-radius: 18px;
+  margin-bottom: 40px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #facc15;
+  box-shadow: 0 0 18px rgba(250, 204, 21, 0.35);
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: #facc15;
+  margin-bottom: 20px;
+}
+
+/* ===== Forms ===== */
+.user-form {
+  display: grid;
+  gap: 18px;
+}
+
+.user-form input,
+.user-form textarea,
+.filters input,
+.filters select {
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background-color: #020617;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.user-form input::placeholder,
+.user-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* ===== Buttons ===== */
+.user-form button {
+  background-color: #facc15;
+  color: #0f172a;
+  border: none;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.user-form button:hover {
+  background-color: #eab308;
+}
+
+/* ===== Filters ===== */
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #020617;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+th {
+  padding: 16px;
+  background-color: #020617;
+  color: #facc15;
+  font-size: 15px;
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid #334155;
+  color: #e5e7eb;
+}
+
+tr:hover td {
+  background-color: #020617;
+}
+
+/* ===== Danger Button ===== */
+.danger {
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.danger:hover {
+  background-color: #b91c1c;
+}
+
+/* ===== Empty ===== */
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+}
